@@ -13,7 +13,7 @@
     int a;
     a = 1;
 ```
-而在`python`等动态语言中,只需要如下的写法
+而在`python`等动态语言中,$\color{#f}只需要如下的写法
 ```
     a = 1
 ```
@@ -97,4 +97,9 @@ struct help{
     template<typename T1, typename T2>
     T2 
 ```
+
+* hello
+  * hello
+    * hello
+      * `hello` 
 
