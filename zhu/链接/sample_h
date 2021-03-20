@@ -1,0 +1,12 @@
+
+sample.o:	file format Mach-O 64-bit x86-64
+
+Sections:
+Idx Name             Size     VMA              Type
+  0 __text           00000069 0000000000000000 TEXT
+  1 __data           00000008 000000000000006c DATA
+  2 __cstring        00000004 0000000000000074 DATA
+  3 __bss            00000004 0000000000000120 BSS
+  4 __compact_unwind 00000040 0000000000000078 DATA
+  5 __eh_frame       00000068 00000000000000b8 DATA
+

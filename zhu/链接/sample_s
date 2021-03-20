@@ -1,0 +1,64 @@
+
+sample.o:	file format Mach-O 64-bit x86-64
+
+Contents of section __text:
+ 0000 554889e5 4883ec10 897dfc8b 75fc488d  UH..H....}..u.H.
+ 0010 3d5f0000 00b000e8 00000000 4883c410  =_..........H...
+ 0020 5dc3662e 0f1f8400 00000000 0f1f4000  ].f...........@.
+ 0030 554889e5 4883ec10 488b0500 000000c7  UH..H...H.......
+ 0040 45fc0000 00008b0d 00000000 0308030d  E...............
+ 0050 00000000 030d0000 000089cf e8000000  ................
+ 0060 0031c048 83c4105d c3                 .1.H...].
+Contents of section __data:
+ 006c 01000000 02000000                    ........
+Contents of section __cstring:
+ 0074 25640a00                             %d..
+Contents of section __bss:
+<skipping contents of bss section at [0120, 0124)>
+Contents of section __compact_unwind:
+ 0078 00000000 00000000 22000000 00000001  ........".......
+ 0088 00000000 00000000 00000000 00000000  ................
+ 0098 30000000 00000000 39000000 00000001  0.......9.......
+ 00a8 00000000 00000000 00000000 00000000  ................
+Contents of section __eh_frame:
+ 00b8 14000000 00000000 017a5200 01781001  .........zR..x..
+ 00c8 100c0708 90010000 24000000 1c000000  ........$.......
+ 00d8 28ffffff ffffffff 22000000 00000000  (.......".......
+ 00e8 00410e10 8602430d 06000000 00000000  .A....C.........
+ 00f8 24000000 44000000 30ffffff ffffffff  $...D...0.......
+ 0108 39000000 00000000 00410e10 8602430d  9........A....C.
+ 0118 06000000 00000000                    ........
+
+Disassembly of section __TEXT,__text:
+
+0000000000000000 _func:
+       0: 55                           	pushq	%rbp
+       1: 48 89 e5                     	movq	%rsp, %rbp
+       4: 48 83 ec 10                  	subq	$16, %rsp
+       8: 89 7d fc                     	movl	%edi, -4(%rbp)
+       b: 8b 75 fc                     	movl	-4(%rbp), %esi
+       e: 48 8d 3d 5f 00 00 00         	leaq	95(%rip), %rdi
+      15: b0 00                        	movb	$0, %al
+      17: e8 00 00 00 00               	callq	0 <_func+0x1c>
+      1c: 48 83 c4 10                  	addq	$16, %rsp
+      20: 5d                           	popq	%rbp
+      21: c3                           	retq
+      22: 66 2e 0f 1f 84 00 00 00 00 00	nopw	%cs:(%rax,%rax)
+      2c: 0f 1f 40 00                  	nopl	(%rax)
+
+0000000000000030 _main:
+      30: 55                           	pushq	%rbp
+      31: 48 89 e5                     	movq	%rsp, %rbp
+      34: 48 83 ec 10                  	subq	$16, %rsp
+      38: 48 8b 05 00 00 00 00         	movq	(%rip), %rax
+      3f: c7 45 fc 00 00 00 00         	movl	$0, -4(%rbp)
+      46: 8b 0d 00 00 00 00            	movl	(%rip), %ecx
+      4c: 03 08                        	addl	(%rax), %ecx
+      4e: 03 0d 00 00 00 00            	addl	(%rip), %ecx
+      54: 03 0d 00 00 00 00            	addl	(%rip), %ecx
+      5a: 89 cf                        	movl	%ecx, %edi
+      5c: e8 00 00 00 00               	callq	0 <_main+0x31>
+      61: 31 c0                        	xorl	%eax, %eax
+      63: 48 83 c4 10                  	addq	$16, %rsp
+      67: 5d                           	popq	%rbp
+      68: c3                           	retq
