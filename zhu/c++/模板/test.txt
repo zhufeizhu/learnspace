@@ -1,0 +1,63 @@
+
+test:	file format mach-o 64-bit x86-64
+
+
+Disassembly of section __TEXT,__text:
+
+0000000100003f90 <__Z1ti>:
+100003f90: 55                          	pushq	%rbp
+100003f91: 48 89 e5                    	movq	%rsp, %rbp
+100003f94: 8d 47 ff                    	leal	-1(%rdi), %eax
+100003f97: 0f af c7                    	imull	%edi, %eax
+100003f9a: 83 ff 01                    	cmpl	$1, %edi
+100003f9d: 0f 44 c7                    	cmovel	%edi, %eax
+100003fa0: 5d                          	popq	%rbp
+100003fa1: c3                          	retq
+100003fa2: 66 2e 0f 1f 84 00 00 00 00 00       	nopw	%cs:(%rax,%rax)
+100003fac: 0f 1f 40 00                 	nopl	(%rax)
+
+0000000100003fb0 <_main>:
+100003fb0: 55                          	pushq	%rbp
+100003fb1: 48 89 e5                    	movq	%rsp, %rbp
+100003fb4: 31 c0                       	xorl	%eax, %eax
+100003fb6: 5d                          	popq	%rbp
+100003fb7: c3                          	retq
+
+Disassembly of section __TEXT,__unwind_info:
+
+0000000100003fb8 <__unwind_info>:
+100003fb8: 01 00                       	addl	%eax, (%rax)
+100003fba: 00 00                       	addb	%al, (%rax)
+100003fbc: 1c 00                       	sbbb	$0, %al
+100003fbe: 00 00                       	addb	%al, (%rax)
+100003fc0: 00 00                       	addb	%al, (%rax)
+100003fc2: 00 00                       	addb	%al, (%rax)
+100003fc4: 1c 00                       	sbbb	$0, %al
+100003fc6: 00 00                       	addb	%al, (%rax)
+100003fc8: 00 00                       	addb	%al, (%rax)
+100003fca: 00 00                       	addb	%al, (%rax)
+100003fcc: 1c 00                       	sbbb	$0, %al
+100003fce: 00 00                       	addb	%al, (%rax)
+100003fd0: 02 00                       	addb	(%rax), %al
+100003fd2: 00 00                       	addb	%al, (%rax)
+100003fd4: 90                          	nop
+100003fd5: 3f                          	<unknown>
+100003fd6: 00 00                       	addb	%al, (%rax)
+100003fd8: 34 00                       	xorb	$0, %al
+100003fda: 00 00                       	addb	%al, (%rax)
+100003fdc: 34 00                       	xorb	$0, %al
+100003fde: 00 00                       	addb	%al, (%rax)
+100003fe0: b9 3f 00 00 00              	movl	$63, %ecx
+100003fe5: 00 00                       	addb	%al, (%rax)
+100003fe7: 00 34 00                    	addb	%dh, (%rax,%rax)
+100003fea: 00 00                       	addb	%al, (%rax)
+100003fec: 03 00                       	addl	(%rax), %eax
+100003fee: 00 00                       	addb	%al, (%rax)
+100003ff0: 0c 00                       	orb	$0, %al
+100003ff2: 01 00                       	addl	%eax, (%rax)
+100003ff4: 10 00                       	adcb	%al, (%rax)
+100003ff6: 01 00                       	addl	%eax, (%rax)
+100003ff8: 00 00                       	addb	%al, (%rax)
+100003ffa: 00 00                       	addb	%al, (%rax)
+100003ffc: 00 00                       	addb	%al, (%rax)
+100003ffe: 00 01                       	addb	%al, (%rcx)
